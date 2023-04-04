@@ -2,3 +2,4 @@
 🌱 permite fragmentar el codigo como en Php
 🌱 Permite HTML + JS = EJS -> Funcion render
 
+detalles
