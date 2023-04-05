@@ -2,7 +2,11 @@ const express = require('express')
 
 const morgan = require('morgan')
 const path = require('path')
-require('ejs') // 🌱
+const connectDB = require('./db') // 🌱
+require('ejs')
+
+connectDB() // 🌱
+
 const app = express()
 
 const HomeRoutes = require('./routes/home')
@@ -13,8 +17,8 @@ app.set('case sensitive routing', true)
 app.set('appName', 'Express Course')
 app.set('port', 4000)
 
-app.set('view engine', 'ejs') // 🌱
-app.set('views', path.join(__dirname, 'views')) // 🌱
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
 
 // Middlewares
 app.use(express.json())
