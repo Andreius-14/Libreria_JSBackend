@@ -1,6 +1,11 @@
 const express = require('express')
 const app = express()
 
+// 💀 Se pueden considerar Middlewares - Son 7 formatos
+app.use(express.text())
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))// Formularios
+
 // 💀 Middlewares - Muestra Informacion
 app.use((req, res, next) => {
   console.log('➡️  Paso por aqui ➡️')
@@ -8,7 +13,7 @@ app.use((req, res, next) => {
   next()
 })
 
-// 💀 rutas
+// rutas
 app.get('/profile', (req, res) => {
   res.send('profile page')
 })
@@ -26,12 +31,12 @@ app.use((req, res, next) => {
   }
 })
 
-// 💀 Rutas
+// Rutas
 app.get('/dashboard', (req, res) => {
   res.send('Dashboard page')
 })
 
-// 💀 puerto
+// puerto
 app.listen(3000)
 console.log(`Server on port ${3000}`)
 
