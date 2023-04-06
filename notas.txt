@@ -1,1 +1,33 @@
 Las carpetas son por ejemplos complejos
+
+-- 🌲 Orden de Codigo
+
+// 🌿 Referencias 🌿
+const express = require('express')
+const morgan = require('morgan')
+const path = require('path')
+const app = express()
+
+const HomeRoutes = require('./routes/home') 
+const UserRoutes = require('./routes/users')
+
+// 🌿 Settings
+app.set('case sensitive routing', true)
+app.set('appName', 'Express Course')
+app.set('port', 4000)
+
+// 🌿 Middlewares
+app.use(express.json())
+app.use(morgan('dev'))
+
+// 🌿 Routes - Inserta codigo Externo
+app.use(HomeRoutes)
+app.use(UserRoutes)
+
+// 🌿 Archivos Estaticos
+app.use('./public', express.static(path.join(__dirname, './public')))
+app.use('./uploads', express.static(path.join(__dirname, './uploads')))
+
+// 🌿 puerto
+app.listen(app.get('port'))
+console.log(`Server ${app.get('appName')} on port ${app.get('port')}`)
