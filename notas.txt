@@ -1,5 +1,5 @@
 Las carpetas son por ejemplos complejos
-
+A veces se requiere añadir "type":"module" para usar espress:
 -- 🌲 Orden de Codigo
 
 // 🌿 Referencias 🌿
