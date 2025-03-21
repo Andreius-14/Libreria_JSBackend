@@ -1,0 +1,6 @@
+🌱 Trae las caracteristicas de Php a la mesa
+🌱 permite fragmentar el codigo como en Php
+🌱 Permite HTML + JS = EJS -> Funcion render
+
+🌱 12 
+Usaremos Axios 
